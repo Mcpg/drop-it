@@ -23,6 +23,7 @@ Addon is based on commands. There is list of them.
   * RemovePrimaryAmmo - removes active weapon's primary ammo ( *BUG!* Command isn't removing ammo from weapon's magazine!)
   * RemoveSecondaryAmmo - removes active weapon's secondary ammo (e.g. in Pulse Rifle (AR2), secondary ammo is Combine Ball)
   * RemoveAllAmmo - removes ammo from all your weapons ( *BUG!* Command isn't removing ammo from weapon's magazine!)
+
 ## TODO
  * Weapon presets
  * Throw weapon/s on player death
