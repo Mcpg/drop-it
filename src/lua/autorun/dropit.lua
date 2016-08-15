@@ -25,12 +25,13 @@ function RemoveSecondaryAmmo(ply)
 end
 
 function RemoveAllWeapons(ply)
-    ply:RemoveAllItems()
+    for k, v in pairs(ply:GetWeapons()) do
+	    ply:StripWeapon(v:GetClass())
+    end
 end
 
 function RemoveAllWeaponsWithAmmo(ply)
     ply:RemoveAllItems()
-    ply:StripAmmo()
 end
 
 function RemoveSelectedWeapon(ply)
