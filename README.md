@@ -11,6 +11,8 @@
 
  ## Commands
  Addon is based on commands. There is list of them.
+ Bug lol, I'll fix it later.
+ 
   [*] DropAllWeapons - drops all your weapons (without ammo).
   [*] DropAllWeaponsWithAmmo - drops all your weapons and strips your ammo.
   [*] DropSelectedWeapon - drops active weapon without stripping ammo.
