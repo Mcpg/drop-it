@@ -1,0 +1,11 @@
+{
+	"title"		:	"Drop It",
+	"type"		:	"tool",
+	"tags"		:	[ "fun", "realism" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.md",
+		"*.svn*"
+	]
+}
