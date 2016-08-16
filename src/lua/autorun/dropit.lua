@@ -59,6 +59,7 @@ function DropSelectedWeaponWithAmmo(ply)
 end
 
 if SERVER then
+    print("Registering DropIt commands...")
     concommand.Add("DropAllWeapons", DropAllWeapons)
     concommand.Add("DropAllWeaponsWithAmmo", DropAllWeaponsWithAmmo)
     concommand.Add("RemoveAllWeapons", RemoveAllWeapons)
@@ -71,4 +72,5 @@ if SERVER then
     concommand.Add("RemoveSelectedWeaponWithAmmo", RemoveSelectedWeaponWithAmmo)
     concommand.Add("RemoveAllAmmo", RemoveAllAmmo)
     concommand.Add("DropSelectedWeaponWithAmmo", DropSelectedWeaponWithAmmo)
+    print("Done.")
 end
