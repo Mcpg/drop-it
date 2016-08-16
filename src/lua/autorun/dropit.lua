@@ -58,8 +58,11 @@ function DropSelectedWeaponWithAmmo(ply)
     ply:DropWeapon(ply:GetActiveWeapon())
 end
 
+function PrintWeaponClass(ply)
+    ply:SendLua("print(\"".. ply:GetActiveWeapon():GetClass() .."\")")
+end
+
 if SERVER then
-    print("Registering DropIt commands...")
     concommand.Add("DropAllWeapons", DropAllWeapons)
     concommand.Add("DropAllWeaponsWithAmmo", DropAllWeaponsWithAmmo)
     concommand.Add("RemoveAllWeapons", RemoveAllWeapons)
@@ -72,5 +75,5 @@ if SERVER then
     concommand.Add("RemoveSelectedWeaponWithAmmo", RemoveSelectedWeaponWithAmmo)
     concommand.Add("RemoveAllAmmo", RemoveAllAmmo)
     concommand.Add("DropSelectedWeaponWithAmmo", DropSelectedWeaponWithAmmo)
-    print("Done.")
+    concommand.Add("PrintWeaponClass", PrintWeaponClass)
 end

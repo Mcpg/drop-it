@@ -9,4 +9,3 @@ echo.
 echo Process returned %ERRORLEVEL%.
 pause
 :stop
-exit

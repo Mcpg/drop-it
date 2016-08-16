@@ -1,6 +1,8 @@
 # Drop It
 "Drop It" is *very* simple Garry's Mod addon, that allows you to drop, or remove your weapons.
 
+Actual version: *1.1.1*
+
 ## Features
  * Dropping all weapons at once.
  * Removing all weapons at once.
