@@ -1,65 +1,109 @@
 function DropAllWeapons(ply)
-    for k, v in pairs(ply:GetWeapons()) do
-	    ply:DropWeapon(v)
+    if IsValid(ply) then
+        for k, v in pairs(ply:GetWeapons()) do
+            ply:DropWeapon(v)
+        end
     end
 end
 
 function DropAllWeaponsWithAmmo(ply)
-    for k, v in pairs(ply:GetWeapons()) do
-	    ply:DropWeapon(v)
+    if IsValid(ply) then
+        for k, v in pairs(ply:GetWeapons()) do
+            ply:DropWeapon(v)
+        end
         ply:StripAmmo()
     end
 end
 
 function RemoveSelectedAmmo(ply)
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+        end
+    end
 end
 
 function RemovePrimaryAmmo(ply)
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
+        end
+    end
 end
 
 function RemoveSecondaryAmmo(ply)
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+        end
+    end
 end
 
 function RemoveAllWeapons(ply)
-    for k, v in pairs(ply:GetWeapons()) do
-	    ply:StripWeapon(v:GetClass())
+    if IsValid(ply) then
+        for k, v in pairs(ply:GetWeapons()) do
+            ply:StripWeapon(v:GetClass())
+        end
     end
 end
 
 function RemoveAllWeaponsWithAmmo(ply)
-    ply:RemoveAllItems()
+    if IsValid(ply) then
+        ply:RemoveAllItems()
+    end
 end
 
 function RemoveSelectedWeapon(ply)
-    ply:StripWeapon(ply:GetActiveWeapon():GetClass())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:StripWeapon(ply:GetActiveWeapon():GetClass())
+        end
+    end
 end
 
 function RemoveSelectedWeaponWithAmmo(ply)
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
-    ply:StripWeapon(ply:GetActiveWeapon():GetClass())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+            ply:StripWeapon(ply:GetActiveWeapon():GetClass())
+        end
+    end
 end
 
 function DropSelectedWeapon(ply)
-    ply:DropWeapon(ply:GetActiveWeapon())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:DropWeapon(ply:GetActiveWeapon())
+        end
+    end
 end
 
 function RemoveAllAmmo(ply)
-    ply:StripAmmo()
+    if IsValid(ply) then
+        ply:StripAmmo()
+    end
 end
 
 function DropSelectedWeaponWithAmmo(ply)
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
-    ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
-    ply:DropWeapon(ply:GetActiveWeapon())
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetPrimaryAmmoType())
+            ply:SetAmmo(0, ply:GetActiveWeapon():GetSecondaryAmmoType())
+            ply:DropWeapon(ply:GetActiveWeapon())
+        end
+    end
 end
 
 function PrintWeaponClass(ply)
-    ply:SendLua("print(\"".. ply:GetActiveWeapon():GetClass() .."\")")
+    if IsValid(ply) then
+        if IsValid(ply:GetActiveWeapon()) then
+            ply:SendLua("print(\"You have no weapon!\")")
+        else
+            ply:SendLua("print(\"".. ply:GetActiveWeapon():GetClass() .."\")")
+        end
+    end
 end
 
 if SERVER then
