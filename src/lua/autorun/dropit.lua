@@ -98,7 +98,7 @@ end
 
 function PrintWeaponClass(ply)
     if IsValid(ply) then
-        if IsValid(ply:GetActiveWeapon()) then
+        if not IsValid(ply:GetActiveWeapon()) then
             ply:SendLua("print(\"You have no weapon!\")")
         else
             ply:SendLua("print(\"".. ply:GetActiveWeapon():GetClass() .."\")")
