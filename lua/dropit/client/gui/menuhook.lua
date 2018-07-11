@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 
@@ -21,7 +21,7 @@ hook.Add("PopulateToolMenu", "DropIt_MenuSettings", function()
                                 "", "", SetupBindsPanel)
 
     spawnmenu.AddToolMenuOption("Options", "Drop It",
-                                "DropIt_InvMan", "Inventory Manager",
+                                "DropIt_InvMan", "Your Inventory",
                                 "", "", SetupInventoryManagerPanel)
     
 end)

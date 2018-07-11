@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 

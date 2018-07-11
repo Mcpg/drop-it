@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 
@@ -42,13 +42,16 @@ function InitNetReceivers()
         RemoveWeapons(player, weapons)
     end)
 
-    net.Receive("DropIt_Action_UpdateWeaponAmmo", function(len, player)
-        local type = net.ReadType()
-        local amount = net.ReadInt(16)
+    net.Receive("DropIt_Action_RemovePrimaryAmmo", function(len, player)
+        StripPrimaryAmmo(player)
+    end)
 
-        if not type or not amount then return end
+    net.Receive("DropIt_Action_RemoveSecondaryAmmo", function(len, player)
+        StripSecondaryAmmo(player)
+    end)
 
-        UpdateAmmo(player, type, amount)
+    net.Receive("DropIt_Action_RemoveAllAmmo", function(len, player)
+        StripAllAmmo(player)
     end)
 end
 
@@ -60,9 +63,9 @@ function InitNet()
     util.AddNetworkString("DropIt_Action_DropWeapon")
     util.AddNetworkString("DropIt_Action_RemoveWeapon")
     util.AddNetworkString("DropIt_Action_UpdateWeaponAmmo")
-    util.AddNetworkString("DropIt_Action_AddWeapon")
-
-    util.AddNetworkString("DropIt_Presets_GetAll")
+    util.AddNetworkString("DropIt_Action_RemovePrimaryAmmo")
+    util.AddNetworkString("DropIt_Action_RemoveSecondaryAmmo")
+    util.AddNetworkString("DropIt_Action_RemoveAllAmmo")
 
     InitNetReceivers()
 

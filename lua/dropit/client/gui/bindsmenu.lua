@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 
@@ -23,7 +23,8 @@ local BindsList =
     {"dropit_removeallweapons_key", "Remove all weapons"},
     "line",
     {"dropit_removeprimaryammo_key", "Remove primary ammo from held weapon"},
-    {"dropit_removesecondaryammo_key", "Remove secondary ammo from held weapon"}
+    {"dropit_removesecondaryammo_key", "Remove secondary ammo from held weapon"},
+    {"dropit_removeallammo_key", "Remove all ammo from all weapons you have"}
 }
 
 -- TODO: implement drop all weapons and remove all weaopns

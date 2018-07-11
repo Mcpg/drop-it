@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 
@@ -88,6 +88,53 @@ local function _ClUpdateAmmo(type, amount)
     net.SendToServer()
 end
 
+---------------------------------------------------------------------------
+
+local function _SvStripPrimaryAmmo(player)
+    if not player:GetActiveWeapon() then return false end
+
+    player:GetActiveWeapon():SetClip1(0)
+    player:SetAmmo(0, player:GetActiveWeapon():GetPrimaryAmmoType())
+
+end
+
+local function _ClStripPrimaryAmmo()
+    net.Start("DropIt_Action_RemovePrimaryAmmo")
+    net.SendToServer()
+end
+
+---------------------------------------------------------------------------
+
+local function _SvStripSecondaryAmmo(player)
+    if not player:GetActiveWeapon() then return false end
+
+    player:SetAmmo(0, player:GetActiveWeapon():GetSecondaryAmmoType())
+end
+
+local function _ClStripSecondaryAmmo()
+    net.Start("DropIt_Action_RemoveSecondaryAmmo")
+    net.SendToServer()
+end
+
+---------------------------------------------------------------------------
+
+local function _SvStripAllAmmo(player)
+    if not player:GetActiveWeapon() then return false end
+    player:StripAmmo()
+    -- It doesn't remove ammo from the clip for whatever reason
+    local weapons = player:GetWeapons()
+    for i=1, #weapons, 1 do
+        if weapons[i] then
+            weapons[i]:SetClip1(0)
+        end
+    end
+end
+
+local function _ClStripAllAmmo()
+    net.Start("DropIt_Action_RemoveAllAmmo")
+    net.SendToServer()
+end
+
 --} Internal functions end ----------------------------------------------------
 
 function DropWeapon(player, weaponClass)
@@ -147,4 +194,40 @@ function UpdateAmmo(player, type, newAmount)
     end
 
     return true, nil
+end
+
+function StripPrimaryAmmo(player)
+    if not player then
+        return false, "Player is nil!"
+    end
+
+    if SERVER then
+        _SvStripPrimaryAmmo(player)
+    else
+        _ClStripPrimaryAmmo()
+    end
+end
+
+function StripSecondaryAmmo(player)
+    if not player then
+        return false, "Player is nil!"
+    end
+
+    if SERVER then
+        _SvStripSecondaryAmmo(player)
+    else
+        _ClStripSecondaryAmmo()
+    end
+end
+
+function StripAllAmmo(player)
+    if not player then
+        return false, "Player is nil!"
+    end
+
+    if SERVER then
+        _SvStripAllAmmo(player)
+    else
+        _ClStripAllAmmo()
+    end
 end

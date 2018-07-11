@@ -29,13 +29,13 @@ section.
 ## Help, I found a bug!
 Oh, that's not good. But there's [Issues](https://github.com/Mcpg/drop-it/issues) section,
 where you can report any issue Drop It has. Just make sure to describe the problem, if it's
-a bug describe what needs to be done to make the error appear, etc - just make the life
-easier for a developer, he's not a machine (yes we are actually humans)!
+a bug describe what needs to be done to make the error appear, provide screenshots,
+etc - just make the life easier for a developer, he's not a machine (yes we are actually humans)!
 
 ## Developer's FAQ - because why not write one
 
 ### Does Drop It provide any APIs for addon developers?
-Right no, as I don't see any need for that. If I'd see at least 1
+Right now no, as I don't see any need for that. If I'd see at least 1
 person that wants these kind of APIs to be added, I will add them.
 
 ### How is Drop It licensed?

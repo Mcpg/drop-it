@@ -1,5 +1,5 @@
 --[[
-    Drop It - Advanced Weapon Dropping Tool
+    Drop It - Weapon Managment Tool
     -----------------------------------------------------------------------
     Copyright (C) 2018 Paweł Cholewa
 
@@ -64,10 +64,9 @@ end
 
 function SetupInventoryManagerPanel(panel)
     panel:ClearControls()
-    panel:Help("Inventory Manager - add, remove and " .. 
-               " modify weapons in your inventory.")
-    panel:Help("Note, that some weapons don't like to " ..
-               " to be dropped and so with some weapons bugs " ..
+    panel:Help("You can pick a weapon to drop or remove from here.")
+    panel:Help("Note, that some weapons don't like to" ..
+               " be dropped and so with some weapons bugs" ..
                " might appear.")
 
     AddLine(panel)
