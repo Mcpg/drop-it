@@ -65,9 +65,8 @@ end
 function SetupInventoryManagerPanel(panel)
     panel:ClearControls()
     panel:Help("You can pick a weapon to drop or remove from here.")
-    panel:Help("Note, that some weapons don't like to" ..
-               " be dropped and so with some weapons bugs" ..
-               " might appear.")
+    panel:Help("Note, that this menu is experimental, bugs might appear " ..
+               "with it. If there's a bug, I probably already know about it.")
 
     AddLine(panel)
 

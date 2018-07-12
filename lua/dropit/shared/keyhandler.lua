@@ -53,8 +53,8 @@ if game.SinglePlayer() or CLIENT then
         local classes = {}
 
         for i = 1, #weapons, 1 do
-            if not weapons[i] then continue end
-            table.Add(classes, weapons[i]:GetClass())
+            if not IsValid(weapons[i]) then continue end
+            classes[i] = weapons[i]:GetClass()
         end
 
         RemoveWeapons(player, classes)

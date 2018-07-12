@@ -32,7 +32,7 @@ end
 -- TODO: implement it yourself in order to get more control over dropped weapon entities (and maybe use _SvRemoveWeapons in the implementation)
 local function _SvDropWeapons(player, classes)
     for i=1, #classes, 1 do
-        if player:GetWeapon(classes[i] or "") then
+        if IsValid(player:GetWeapon(classes[i] or "")) then
             player:DropWeapon(player:GetWeapon(classes[i]))
         end
     end
@@ -60,7 +60,7 @@ local function _SvUpdateAmmo(player, type, amount)
     local rn = player:GetAmmoCount(type)
 
     if type == "clip1" then
-        if player:GetActiveWeapon() then
+        if IsValid(player:GetActiveWeapon()) then
             player:GetActiveWeapon():SetClip1(amount)
         end
         return
@@ -106,7 +106,7 @@ end
 ---------------------------------------------------------------------------
 
 local function _SvStripSecondaryAmmo(player)
-    if not player:GetActiveWeapon() then return false end
+    if not IsValid(player:GetActiveWeapon()) then return false end
 
     player:SetAmmo(0, player:GetActiveWeapon():GetSecondaryAmmoType())
 end
@@ -119,7 +119,7 @@ end
 ---------------------------------------------------------------------------
 
 local function _SvStripAllAmmo(player)
-    if not player:GetActiveWeapon() then return false end
+    if not IsValid(player:GetActiveWeapon()) then return false end
     player:StripAmmo()
     -- It doesn't remove ammo from the clip for whatever reason
     local weapons = player:GetWeapons()

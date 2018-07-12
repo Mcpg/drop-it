@@ -79,11 +79,3 @@ end, nil, "Removes secondary ammo from your weapon.")
 concommand.Add("RemoveAllAmmo", function(player)
     StripAllAmmo(player)
 end, nil, "Removes all ammo from all your weapons.")
-
-concommand.Add("PrintWeaponClass", function(player)
-    if IsValid(player:GetActiveWeapon()) then 
-        print(player:GetActiveWeapon():GetClass())
-    else
-        print("You don't hold any weapon!")
-    end
-end), nil, "Prints selected weapon's classname you can use in give command.")

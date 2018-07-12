@@ -14,7 +14,7 @@
     GNU General Public License for more details.
 ]]--
 
-DropItVersion = "2.0"
+DropItVersion = "2.0.1"
 
 if SERVER then
     print("Initializing Drop It v" .. DropItVersion .. "! (Server-Side)")

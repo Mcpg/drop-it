@@ -5,6 +5,9 @@ Simple changelogs for every Drop It's version, starting with 1.0.
 
 ### 2.0
  * Rewritten addon
+ 
+### 2.0.1
+ * Fixed bugs that made the addon unusable
 
 ## 1.x series (outdated version)
 
