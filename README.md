@@ -37,10 +37,3 @@ etc - just make the life easier for a developer, he's not a machine (yes we are 
 ### Does Drop It provide any APIs for addon developers?
 Right now no, as I don't see any need for that. If I'd see at least 1
 person that wants these kind of APIs to be added, I will add them.
-
-### How is Drop It licensed?
-Your freedom is protected with [GPLv3]("https://www.gnu.org/licenses/gpl-3.0.en.html")
-license (or any later). And so - if you want to modify Drop It (you can do it),
-you still have to respect the license.
-
-![GPLv3 Logo](https://www.gnu.org/graphics/gplv3-127x51.png)
